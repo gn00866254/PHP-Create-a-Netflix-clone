@@ -1,0 +1,28 @@
+/*htmlとbodyのdefaultのmarginとpaddingを取り除くこと*/
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.signInContainer {
+    background-color: #efefee;
+    /*ビューポートの高さに対する割合を100%*/
+    height: 100vh;
+    display: flex;
+    /*flexboxコンテナのクロス軸に合わせて、中央に配置します */
+    align-items: center;
+    /*flexboxコンテナのメイン軸の中心から配置します */
+    justify-content: center;
+}
+
+.column {
+    background-color: #fff;
+    /*要素の最小高さ*/
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    /*box-shadow: 色 水平方向 垂直方向 影のぼかし 影の広さ*/
+    box-shadow: rgba(0,0,0, 0.1) 0 1px 2px;
+}
