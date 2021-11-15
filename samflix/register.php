@@ -1,13 +1,25 @@
+<?php
+  if(isset($_POST["submitButton"])){
+    echo "Form was submitted";
+  }  
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Welcome to Reeceflix</title>
+        <title>Welcome to Samflix+</title>
         <link rel="stylesheet" type="text/css" href="assets/style/style.css" />
     </head>
     <body>
         <div class="signInContainer">
 
             <div class="column">
+                
+                <div class="header">
+                    <img src="assets/images/Logo.png" title="Logo" alt="Site logo">
+                    <h3>Sign Up</h3>
+                    <span>to continue to Samflix+</span>
+                </div>
                 
                 <form method="POST">
                     <input type="text" name="firstName" placeholder="First name" required>
