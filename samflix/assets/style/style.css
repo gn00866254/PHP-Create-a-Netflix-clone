@@ -9,6 +9,9 @@ body {
 * {
     font-family: Arial, Helvetica, sans-serif;
     color:#333;
+    box-sizing: border-box;
+    /*スクロールできるようにする*/
+    overflow-y: auto;
   }
 
 .signInContainer {
@@ -89,4 +92,11 @@ body {
 
 .column .header img{
 	width:100px;
+}
+
+.signInMessage{
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+
 }
