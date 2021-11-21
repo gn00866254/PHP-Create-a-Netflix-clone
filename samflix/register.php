@@ -1,6 +1,16 @@
 <?php
   if(isset($_POST["submitButton"])){
-    echo "Form was submitted";
+    $firstname = $_POST["firstName"];
+    echo sanitizeFormString($inputText);
+    
+    function sanitizeFormString($inputText){
+        $inputText = strip_tags($inputText);
+        $inputText = str_replace(" ","",$inputText);
+        //$inputText =trim($inputText);
+        $inputText = strtolower($inputText);
+        $inputText = ucfirst($inputText);
+        return $inputText;
+    }
   }  
 ?>
 
