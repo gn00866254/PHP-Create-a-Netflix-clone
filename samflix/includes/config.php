@@ -10,6 +10,7 @@ try {
     $con->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_WARNING);
 }
 catch (PDOException $e){
+    //エラーメッセージを出力する。
     exit("Connetion failed: ".$e->getMessage());
 }
 ?>
