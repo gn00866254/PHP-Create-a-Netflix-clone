@@ -38,7 +38,7 @@ require_once("includes/classes/Account.php");
                 
                 <form method="POST">
                     <?php echo $account->getError(Constants::$loginFailed); ?>
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="username" placeholder="Username" required>
                     
                     <input type="password" name="password" placeholder="Password" required>
                     

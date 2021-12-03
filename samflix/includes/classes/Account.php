@@ -26,6 +26,7 @@ class Account{
     
     public function login($un,$pw){
         $pw=hash("sha512",$pw);
+        //データを抽出し、あれば通る。なければFalse。
         $query=$this->con->prepare("SELECT * FROM users WHERE username=:un AND password=:pw");
         $query->bindValue(":un", $un);
         $query->bindValue(":pw", $pw);
