@@ -20,8 +20,12 @@ class PreviewProvider{
     }
 
     private function getRandomEntity(){
-        
-        $this->con->prepare();
+        //データベースからランダムに抽出。余談：この方法は遅い。
+        $query = $this->con->prepare("SELECT * FROM entities ORDER BY RAND() LIMIT 1");
+        $query->execute();
+
+        $row = $query->fetch(PDO::FETCH_ASSOC);
+        echo $row["name"];
     }
 
 }
