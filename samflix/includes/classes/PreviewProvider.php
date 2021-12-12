@@ -25,7 +25,7 @@ class PreviewProvider{
         $query->execute();
         //fectch関数のモードを指定することでデータを抽出する。（連想配列）
         $row = $query->fetch(PDO::FETCH_ASSOC);
-        echo $row["name"];
+        return new Entity($this->con, $row);
     }
 
 }
