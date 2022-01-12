@@ -9,14 +9,32 @@ class PreviewProvider{
         $this->username = $username;
         
     }
-    //試しに、hello worldをリターンさせる。
+
     public function createPreviewVideo($entity){
         
         //もしnullだったらランダムに
         if ($entity == null){
             $entity = $this->getRandomEntity();
         }
+        //try
+        //$name=$entity->getId();
+        //return $name;
+        $id=$entity->getId();
+        $name=$entity->getName();
+        $preview=$entity->getPreview();
+        $thumbnail=$entity->getThumbnail();
+        //try
+        //echo "<img src='$thumbnail'>";
+        return "<div class='previewContainer'>
 
+                    <img src='$thumbnail' class='previewImage' hidden>
+
+                    <video autoplay muted class='previewVideo'>
+                        <source src='$preview' type='video/mp4'>
+                    </video>
+        
+                </div>";
+        
     }
 
     private function getRandomEntity(){
@@ -25,6 +43,7 @@ class PreviewProvider{
         $query->execute();
         //fectch関数のモードを指定することでデータを抽出する。（連想配列）
         $row = $query->fetch(PDO::FETCH_ASSOC);
+        
         return new Entity($this->con, $row);
     }
 
